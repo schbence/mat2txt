@@ -57,14 +57,15 @@ def convert_and_save(input, output):
     notify_convert_start()
     print('Convert and save: %s' % input)
     outfile = input.split('/')[-1].replace('.mat','.txt')
-    print('Outfile: %s' % output + '/' + outfile)
+    outpath = output + '/' + outfile
+    print('Outfile: %s' % outpath)
     f = h5py.File(input)
     key_list = PROFILES[profile_var.get()].split('/')
     for k in key_list:
         f = f[k]
     arr = array(f)[0]
     print(arr)
-    savetxt(outfile, arr, fmt='%.6f')
+    savetxt(outpath, arr, fmt='%.6f')
     notify_convert_done()
 
 
