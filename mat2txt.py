@@ -4,7 +4,7 @@ from tkinter import ttk
 import h5py, os
 from numpy import array, savetxt
 
-VERSION="1.0"
+VERSION="1.1"
 
 def button_single_click():
     filename = filedialog.askopenfilename()
